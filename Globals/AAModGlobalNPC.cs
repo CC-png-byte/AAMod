@@ -415,14 +415,7 @@ namespace AAMod
                 }
             }
 
-            if (npc.type == NPCID.TacticalSkeleton || npc.type == NPCID.SkeletonSniper || npc.type == NPCID.SkeletonCommando)
-            {
-                if (Main.rand.Next(50) == 0)
-                {
-                    npc.DropLoot(mod.ItemType("M79Parts"));
-                }
-            }
-
+       
             if (npc.type == NPCID.QueenBee)
             {
                 if (Main.rand.NextFloat() < .01f)
@@ -1251,12 +1244,7 @@ namespace AAMod
 
         public override void SetupShop(int type, Chest shop, ref int nextSlot)
         {
-            if (type == NPCID.Demolitionist && !Main.dayTime)
-            {
-                shop.item[nextSlot].SetDefaults(mod.ItemType("M79Round"));
-                nextSlot++;
-            }
-
+     
             if (type == NPCID.WitchDoctor && Main.hardMode)
             {
                 shop.item[nextSlot].SetDefaults(mod.ItemType("Mortar"));
