@@ -12,7 +12,7 @@ namespace AAMod.NPCs.Enemies.Inferno
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Singemander");
+            DisplayName.SetDefault("Komodo");
 
             Main.npcFrameCount[npc.type] = 5;
         }
