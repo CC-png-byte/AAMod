@@ -44,6 +44,7 @@ namespace AAMod.Items.Ranged
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.ShroomiteBar, 14);
+			recipe.AddIngredient(ItemID.Uzi);
 			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
