@@ -783,8 +783,6 @@ namespace AAMod.Worldgeneration
                 new Actions.SetLiquid(0, 0)
             }));
 
-            WorldGen.PlaceObject(origin.X + 80, origin.Y + 88, mod.TileType("GreedAltar"));
-            NetMessage.SendObjectPlacment(-1, origin.X + 80, origin.Y + 88, mod.TileType("GreedAltar"), 0, 0, -1, -1);
             HoardChest(origin.X + 19, origin.Y + 55);
             HoardChest(origin.X + 38, origin.Y + 67, 1);
             HoardChest(origin.X + 25, origin.Y + 34);
@@ -799,6 +797,9 @@ namespace AAMod.Worldgeneration
             HoardChest(origin.X + 121, origin.Y + 33);
             HoardChest(origin.X + 131, origin.Y + 48, 3);
             HoardChest(origin.X + 130, origin.Y + 69);
+
+            WorldGen.PlaceObject(origin.X + 80, origin.Y + 88, mod.TileType("GreedAltar"));
+            NetMessage.SendObjectPlacment(-1, origin.X + 80, origin.Y + 88, mod.TileType("GreedAltar"), 0, 0, -1, -1);
 
             return true;
         }
@@ -1069,6 +1070,42 @@ namespace AAMod.Worldgeneration
             gen.Generate(newOriginX, newOriginY, true, true);
             
             //WorldGen.PlaceChest(newOriginX + 130, newOriginY + 102, (ushort)mod.TileType("SunkenChest"), true);
+            return true;
+        }
+    }
+
+    public class Crystal : MicroBiome
+    {
+        public override bool Place(Point origin, StructureMap structures)
+        {
+            Mod mod = AAMod.instance;
+
+            Dictionary<Color, int> colorToTile = new Dictionary<Color, int>
+            {
+                [new Color(255, 0, 0)] = TileID.CrystalBlock,
+                [new Color(0, 0, 255)] = TileID.GraniteBlock,
+                [new Color(255, 255, 255)] = -2, //turn into air
+                [Color.Black] = -1 //don't touch when genning		
+            };
+
+            Dictionary<Color, int> colorToWall = new Dictionary<Color, int>
+            {
+                [new Color(255, 0, 0)] = WallID.Crystal,
+                [new Color(255, 255, 255)] = -2,
+                [Color.Black] = -1
+            };
+
+            TexGen gen = BaseWorldGenTex.GetTexGenerator(mod.GetTexture("Worldgeneration/EnderCrystal"), colorToTile, mod.GetTexture("Worldgeneration/EnderCrystalWall"), colorToWall, null, mod.GetTexture("Worldgeneration/EnderCrystalSlope"));
+
+            gen.Generate(origin.X, origin.Y, true, true);
+
+            WorldGen.PlaceObject(origin.X + 27, origin.Y + 26, (ushort)mod.TileType("EnderMemory"));
+            NetMessage.SendObjectPlacment(-1, origin.X + 27, origin.Y + 26, (ushort)mod.TileType("EnderMemory"), 0, 0, -1, -1);
+            WorldGen.PlaceObject(origin.X + 16, origin.Y + 27, (ushort)mod.TileType("CrystalChandelier"));
+            NetMessage.SendObjectPlacment(-1, origin.X + 16, origin.Y + 27, (ushort)mod.TileType("CrystalChandelier"), 0, 0, -1, -1);
+            WorldGen.PlaceObject(origin.X + 41, origin.Y + 27, (ushort)mod.TileType("CrystalChandelier"));
+            NetMessage.SendObjectPlacment(-1, origin.X + 41, origin.Y + 27, (ushort)mod.TileType("CrystalChandelier"), 0, 0, -1, -1);
+
             return true;
         }
     }

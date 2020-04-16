@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace AAMod.Items.Dev
 {
@@ -49,8 +50,8 @@ Right click to fire explosive magic bolts");
                 item.noUseGraphic = false;
                 item.channel = false;
                 item.autoReuse = true;
-                item.useTime = 5;
-                item.useAnimation = 15;
+                item.useTime = 10;
+                item.useAnimation = 30;
                 item.UseSound = new LegacySoundStyle(2, 105, Terraria.Audio.SoundType.Sound);
             }
             else
@@ -66,6 +67,20 @@ Right click to fire explosive magic bolts");
                 item.UseSound = SoundID.Item1;
             }
             return base.CanUseItem(player);
+        }
+
+        public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(null, "ArchwitchWand");
+            recipe.AddIngredient(null, "EXSoul");
+            recipe.SetResult(this);
+            recipe.AddRecipe(); 
+            recipe = new ModRecipe(mod);
+            recipe.AddIngredient(null, "CatsEyeRifleEX");
+            recipe.AddTile(TileID.LunarCraftingStation);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
         }
     }
 }
