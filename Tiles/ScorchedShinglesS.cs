@@ -20,7 +20,7 @@ namespace AAMod.Tiles
             {
                 return true;
             }
-            return false;
+            return true;
         }
 
         public override bool CanExplode(int i, int j)

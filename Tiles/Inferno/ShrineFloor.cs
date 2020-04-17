@@ -2,7 +2,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 
-namespace AAMod.Tiles
+namespace AAMod.Tiles.Inferno
 {
     public class ShrineFloor : ModTile
     {

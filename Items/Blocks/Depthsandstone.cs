@@ -4,7 +4,6 @@ namespace AAMod.Items.Blocks
     {
         public override void SetDefaults()
         {
-
             item.width = 16;
             item.height = 16;
             item.maxStack = 999;
@@ -14,7 +13,7 @@ namespace AAMod.Items.Blocks
             item.useTime = 10;
             item.useStyle = 1;
             item.consumable = true;
-            item.rare = 2;
+            item.rare = 1;
             item.createTile = mod.TileType("Depthsandstone"); //put your CustomBlock Tile name
         }
 

@@ -2,7 +2,7 @@
 using Terraria;
 using Terraria.ModLoader;
 
-namespace AAMod.Tiles.Bricks
+namespace AAMod.Tiles.Inferno
 {
     class AncientRazewood : ModTile
     {
@@ -13,7 +13,7 @@ namespace AAMod.Tiles.Bricks
             Main.tileMergeDirt[Type] = true;
             Main.tileLighted[Type] = false;
             Main.tileBlockLight[Type] = true;
-            drop = mod.ItemType("IncineriteBrick");   
+            drop = mod.ItemType("AncientRazewood");   
             AddMapEntry(new Color(80, 60, 20));
             dustType = ModContent.DustType<Dusts.AshRain>();
         }

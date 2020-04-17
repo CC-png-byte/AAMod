@@ -1,13 +1,12 @@
 using Terraria;
 using Terraria.ModLoader;
 using BaseMod;
-using AAMod.Tiles.Ore;
 using Terraria.Localization;
 using Microsoft.Xna.Framework;
 
 namespace AAMod.Items.Boss.Equinox
 {
-	public class StarIdol : BaseAAItem
+    public class StarIdol : BaseAAItem
 	{
 		public override void SetStaticDefaults()
 		{

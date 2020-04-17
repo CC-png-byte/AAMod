@@ -15,20 +15,5 @@ namespace AAMod.Walls
 		{
 			num = fail ? 1 : 3;
 		}
-
-
-        public override void KillWall(int i, int j, ref bool fail)
-        {
-            if (AAWorld.downedShen)
-            {
-                fail = false;
-            }
-            fail = true;
-        }
-
-        public override bool CanExplode(int i, int j)
-        {
-            return false;
-        }
     }
 }

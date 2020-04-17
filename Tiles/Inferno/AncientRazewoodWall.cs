@@ -8,7 +8,8 @@ namespace AAMod.Tiles.Inferno
 		public override void SetDefaults()
 		{
             dustType = mod.DustType("AshDust");
-			AddMapEntry(new Color(50, 25, 0));
+			AddMapEntry(new Color(42, 33, 22));
+			drop = mod.ItemType("AncientRazewoodWall");
 		}
 
         public override void NumDust(int i, int j, bool fail, ref int num)
