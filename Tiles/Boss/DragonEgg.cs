@@ -35,8 +35,8 @@ namespace AAMod.Tiles.Boss
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Dragon Egg");
             drop1 = ModContent.ItemType<Pyrosphere>();
-            drop2 = ModContent.ItemType<Items.Ranged.Firebuster>();
-            drop3 = ModContent.ItemType<Items.Magic.Volley>();
+            drop2 = ModContent.ItemType<Items.Ranged.Railjaw>();
+            drop3 = ModContent.ItemType<Items.Magic.HeatersMaw>();
             drop4 = ModContent.ItemType<Items.Pets.DragonsSoul>();
             drop5 = ModContent.ItemType<Items.Accessories.DragonsGuard>();
             AddMapEntry(new Color(102, 45, 42), name);

@@ -406,10 +406,10 @@ namespace AAMod
                                 item = mod.ItemType("Pyrosphere");
                                 break;
                             case 1:
-                                item = mod.ItemType("Firebuster");
+                                item = mod.ItemType("Railjaw");
                                 break;
                             case 2:
-                                item = mod.ItemType("Volley");
+                                item = mod.ItemType("HeatersMaw");
                                 break;
                             case 3:
                                 item = mod.ItemType("DragonsSoul");

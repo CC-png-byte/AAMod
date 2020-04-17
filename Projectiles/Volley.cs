@@ -10,7 +10,7 @@ namespace AAMod.Projectiles
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Volley");
-            Main.projFrames[projectile.type] = 4;
+            Main.projFrames[projectile.type] = 2;
         }
 
         public override void SetDefaults()
@@ -41,11 +41,11 @@ namespace AAMod.Projectiles
             {
                 projectile.Kill();
             }
-            if (projectile.frameCounter++ >= 9)
+            if (projectile.frameCounter++ >= 6)
             {
                 projectile.frameCounter = 0;
                 projectile.frame += 1;
-                if (projectile.frame > 3)
+                if (projectile.frame > 1)
                 {
                     projectile.frame = 0;
                 }

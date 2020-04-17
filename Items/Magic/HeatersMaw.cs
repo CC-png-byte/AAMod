@@ -5,7 +5,7 @@ using Terraria.ID;
 
 namespace AAMod.Items.Magic
 {
-    public class Volley : BaseAAItem
+    public class HeatersMaw : BaseAAItem
     {
         public override void SetDefaults()
         {
@@ -29,7 +29,7 @@ namespace AAMod.Items.Magic
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Volley");
+            DisplayName.SetDefault("Heater's Maw");
             Tooltip.SetDefault("Shoots a volley of three flameballs at an even spread");
         }
 

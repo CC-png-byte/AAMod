@@ -23,7 +23,7 @@ namespace AAMod.Items.Accessories
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Dragon's Guard");
+            DisplayName.SetDefault("Dragon's Ward");
             Tooltip.SetDefault(@"Enemies that strike you are set ablaze");
         }
     }

@@ -28,7 +28,7 @@ namespace AAMod.Items.Magic
 
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Fireblast");
+			DisplayName.SetDefault("Fireburst Tome");
 			Tooltip.SetDefault("Shoots an explosive bolt of dragonflame");
 		}
 
