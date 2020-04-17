@@ -5,7 +5,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using BaseMod;
 using AAMod.NPCs.Bosses.Athena;
-using AAMod.NPCs.Bosses.Athena.Olympian;
 using Terraria.Localization;
 
 namespace AAMod.NPCs.Enemies.Sky
@@ -31,7 +30,7 @@ namespace AAMod.NPCs.Enemies.Sky
 			npc.noGravity = false;
             npc.HitSound = SoundID.NPCHit1;
             npc.DeathSound = SoundID.NPCDeath1;
-            npc.noTileCollide = true;
+            npc.noTileCollide = false;
             banner = npc.type;
 			bannerItem = mod.ItemType("SeraphBanner");
             npc.dontTakeDamage = true;
@@ -52,7 +51,6 @@ namespace AAMod.NPCs.Enemies.Sky
 
             if (npc.ai[0] == 120 && Main.netMode != 1)
             {
-                npc.noGravity = true;
                 npc.netUpdate = true;
             }
             if (npc.ai[0] == 180)
@@ -66,25 +64,29 @@ namespace AAMod.NPCs.Enemies.Sky
                 npc.netUpdate = true;
             }
 
-            if (npc.ai[0] >= 120 && npc.ai[1] < 240)
+            if (npc.ai[0] >= 120 && npc.ai[0] < 240)
             {
                 npc.velocity *= .97f;
             }
             else if (npc.ai[0] >= 240)
             {
+                npc.noTileCollide = true;
+                npc.noGravity = true;
                 npc.dontTakeDamage = false;
                 npc.velocity.Y -= 0.5f;
-                if (npc.velocity.Y > 15f) npc.velocity.Y = 8f;
+                if (npc.velocity.Y < -8f) npc.velocity.Y = -8f;
 
                 if (player.Center.X > npc.Center.X)
                 {
-                    npc.velocity.X -= 0.5f;
+                    npc.velocity.X -= 0.2f;
                     if (npc.velocity.X < -8f) npc.velocity.Y = -8f;
+                    npc.spriteDirection = 1;
                 }
                 else
                 {
-                    npc.velocity.X += 0.5f;
+                    npc.velocity.X += 0.2f;
                     if (npc.velocity.X > 8f) npc.velocity.Y = 8f;
+                    npc.spriteDirection = -1;
                 }
 
                 Vector2 Acropolis = new Vector2(Origin.X + (80 * 16), Origin.Y + (79 * 16));
@@ -95,7 +97,10 @@ namespace AAMod.NPCs.Enemies.Sky
                     {
                         Dust.NewDust(npc.Center, 60, 40, ModContent.DustType<Feather>(), Main.rand.Next(-1, 2), 1, 0);
                     }
-                    Tiles.Boss.AcropolisAltar.SpawnBoss(player, ModContent.NPCType<Athena>(), true, player.Center, 0, -1, Language.GetTextValue("Mods.AAMod.Common.Athena"), false);
+                    if (player.GetModPlayer<AAPlayer>().ZoneAcropolis)
+                    {
+                        Tiles.Boss.AcropolisAltar.SpawnBoss(player, ModContent.NPCType<Athena>(), player.Center, Language.GetTextValue("Mods.AAMod.Common.Athena"), false);
+                    }
                     BaseAI.KillNPC(npc); 
                     npc.netUpdate = true; 
                 }
@@ -116,11 +121,11 @@ namespace AAMod.NPCs.Enemies.Sky
         {
             switch (Main.rand.Next(5))
             {
-                case 0: return "OUCH..! How RUDE! ATHENAAAAAAAAAAAAAAA!!!";
-                case 1: return "HEY! I was only playing! Wait till Athena hears about THIS!";
-                case 2: return "NOW You've done it! Oh ATHEEEEENAAAAAAAA";
-                case 3: return "THAT HURT..! WAAAAAAAAAAH ATHENAAAAAA THE EARTHWALKER IS BEING MEAN!";
-                default: return "*GASP*! You scuffed up my dress..! I'm getting Athena..!";
+                case 0: return Lang.EnemyChat("SeraphHurtChat1");
+                case 1: return Lang.EnemyChat("SeraphHurtChat2");
+                case 2: return Lang.EnemyChat("SeraphHurtChat3");
+                case 3: return Lang.EnemyChat("SeraphHurtChat4");
+                default: return Lang.EnemyChat("SeraphHurtChat5");
             }
         }
 
@@ -149,7 +154,7 @@ namespace AAMod.NPCs.Enemies.Sky
                 }
                 if (npc.frame.Y >= frameHeight * Main.npcFrameCount[npc.type])
                 {
-                    npc.frame.Y = 1;
+                    npc.frame.Y = frameHeight;
                 }
             }
         }
