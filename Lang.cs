@@ -3527,7 +3527,7 @@ Fishy";
                         return "出生点设置!";
 
                         case "EnderMemoryInfo":
-                        return "用于纪念我们心中的";
+                        return "用于纪念我们心中的一位早已逝去的朋友";
 
                         case "DracoAltar1":
                         return "臭小子. 龙不睡觉吗? 明天再来. ";
