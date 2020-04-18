@@ -358,8 +358,8 @@ namespace AAMod
 
             AnubisAwakened = downed.Contains("AnuA");
             WormActive = downed.Contains("WormA");
-            WormActive = downed.Contains("StarA");
-            WormActive = downed.Contains("GravA");
+            StarActive = downed.Contains("StarA");
+            GravActive = downed.Contains("GravA");
             //World Changes
             ChaosOres = downedGrips;
             Dynaskull = NPC.downedBoss3;
