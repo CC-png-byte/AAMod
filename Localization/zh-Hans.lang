@@ -1931,6 +1931,8 @@ ItemName.VoidUnit=虚空机械单元
 ItemName.YtriumOre=钇土矿
 ItemTooltip.YtriumOre=(破坏燎狱/潭渊祭坛后,地下洞穴层,土黄色)
 
+// AAMod.Items.Blocks.Daybreak
+
 // AAMod.Items.Blocks.Doom
 
 ItemName.DoomBathtub=厄劫浴缸
@@ -6323,6 +6325,9 @@ NPCName.NCPortal=黑色虚空
 
 NPCName.WormSpawn=天堂之声
 
+// AAMod.Tiles.Decoration
+
+MapObject.EnderMemory=永恒之记忆
 
 // AAMod.Items.Dev.DevTile.Tiles
 
