@@ -558,9 +558,7 @@ namespace AAMod.Worldgeneration
             {
                 [new Color(255, 0, 0)] = mod.TileType("Torchstone"),
                 [new Color(0, 0, 255)] = mod.TileType("Torchstone"),
-                [new Color(0, 255, 0)] = mod.TileType("ScorchedDynastyWoodS"),
-                [new Color(255, 255, 0)] = mod.TileType("ScorchedShinglesS"),
-                [new Color(255, 0, 255)] = mod.TileType("ScorchedPlatform"),
+                [new Color(255, 0, 255)] = TileID.Glass,
                 [new Color(150, 150, 150)] = -2, //turn into air
                 [Color.Black] = -1 //don't touch when genning
             };
