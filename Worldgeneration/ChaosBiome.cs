@@ -535,6 +535,236 @@ namespace AAMod.Worldgeneration
         }
     }
 
+    public class InfernoLBiome : MicroBiome
+    {
+        public override bool Place(Point origin, StructureMap structures)
+        {
+            //this handles generating the actual tiles, but you still need to add things like treegen etc. I know next to nothing about treegen so you're on your own there, lol.
+
+            Mod mod = AAMod.instance;
+            //--- Initial variable creation
+            ushort tileGrass = (ushort)mod.TileType("InfernoGrass"), tileStone = (ushort)mod.TileType("Torchstone"), tileSnow = (ushort)mod.TileType("TorchAsh"),
+            tileIce = (ushort)mod.TileType("Torchice"), tileSand = (ushort)mod.TileType("Torchsand"), tileSandHardened = (ushort)mod.TileType("TorchsandHardened"), tileSandstone = (ushort)mod.TileType("Torchsandstone"),
+            LivingWood = (ushort)ModContent.TileType<LivingRazewood>(), LivingLeaves = (ushort)ModContent.TileType<LivingRazeleaves>();
+
+            byte StoneWall = (byte)ModContent.WallType<TorchstoneWall>(), SandstoneWall = (byte)ModContent.WallType<TorchsandstoneWall>(), HardenedSandWall = (byte)ModContent.WallType<TorchsandHardenedWall>(),
+            GrassWall = (byte)ModContent.WallType<InfernoGrassWall>();
+
+
+            int worldSize = GetWorldSize();
+            int biomeRadius = 260;
+
+            Dictionary<Color, int> colorToTile = new Dictionary<Color, int>
+            {
+                [new Color(255, 0, 0)] = mod.TileType("Torchstone"),
+                [new Color(0, 0, 255)] = mod.TileType("Torchstone"),
+                [new Color(0, 255, 0)] = mod.TileType("ScorchedDynastyWoodS"),
+                [new Color(255, 255, 0)] = mod.TileType("ScorchedShinglesS"),
+                [new Color(255, 0, 255)] = mod.TileType("ScorchedPlatform"),
+                [new Color(150, 150, 150)] = -2, //turn into air
+                [Color.Black] = -1 //don't touch when genning
+            };
+
+            Dictionary<Color, int> colorToWall = new Dictionary<Color, int>
+            {
+                [new Color(255, 0, 0)] = mod.WallType("TorchstoneWall"),
+                [new Color(0, 0, 255)] = mod.WallType("BurnedDynastyWall"),
+                [Color.Black] = -1 //don't touch when genning				
+            };
+
+            TexGen gen = BaseWorldGenTex.GetTexGenerator(mod.GetTexture("Worldgeneration/VolcanoL"), colorToTile, mod.GetTexture("Worldgeneration/VolcanoLWalls"), colorToWall, mod.GetTexture("Worldgeneration/VolcanoLLava"));
+            Point newOrigin = new Point(origin.X, origin.Y - 30); //biomeRadius);
+
+            WorldUtils.Gen(newOrigin, new Shapes.Circle(biomeRadius), Actions.Chain(new GenAction[] //remove all fluids in sphere...
+			{
+                new InWorld(),
+                new Modifiers.RadialDither(biomeRadius - 5, biomeRadius),
+                new Actions.SetLiquid(1, 0)
+            }));
+            WorldUtils.Gen(new Point(origin.X - (gen.width / 2), origin.Y - 20), new Shapes.Rectangle(gen.width, gen.height), Actions.Chain(new GenAction[] //remove all fluids in the volcano...
+			{
+                new InWorld(),
+                new Actions.SetLiquid(0, 0)
+            }));
+            WorldUtils.Gen(newOrigin, new Shapes.Circle(biomeRadius), Actions.Chain(new GenAction[] //gen grass...
+			{
+                new InWorld(),
+                new Modifiers.OnlyTiles(new ushort[]{ TileID.Grass, TileID.CorruptGrass, TileID.FleshGrass }), //ensure we only replace the intended tile (in this case, grass)
+				new Modifiers.RadialDither(biomeRadius - 5, biomeRadius), //this provides the 'blending' on the edges (except the top)
+				new SetModTile(tileGrass, true, true) //actually place the tile
+			}));
+            WorldUtils.Gen(newOrigin, new Shapes.Circle(biomeRadius), Actions.Chain(new GenAction[] //dirt...
+            {
+                new InWorld(),
+                new Modifiers.OnlyTiles(new ushort[] { TileID.SnowBlock }),
+                new Modifiers.RadialDither(biomeRadius - 5, biomeRadius),
+                new SetModTile(tileSnow, true, true)
+            }));
+            WorldUtils.Gen(newOrigin, new Shapes.Circle(biomeRadius), Actions.Chain(new GenAction[] //and stone.
+			{
+                new InWorld(),
+                new Modifiers.OnlyTiles(new ushort[]{ TileID.Stone, TileID.Ebonstone, TileID.Crimstone, TileID.Pearlstone }),
+                new Modifiers.RadialDither(biomeRadius - 5, biomeRadius),
+                new SetModTile(tileStone, true, true)
+            }));
+            WorldUtils.Gen(newOrigin, new Shapes.Circle(biomeRadius), Actions.Chain(new GenAction[] //ice...
+			{
+                new InWorld(),
+                new Modifiers.OnlyTiles(new ushort[]{ TileID.IceBlock, TileID.CorruptIce, TileID.FleshIce }),
+                new Modifiers.RadialDither(biomeRadius - 5, biomeRadius),
+                new SetModTile(tileIce, true, true)
+            }));
+            WorldUtils.Gen(newOrigin, new Shapes.Circle(biomeRadius), Actions.Chain(new GenAction[] //sand...
+			{
+                new InWorld(),
+                new Modifiers.OnlyTiles(new ushort[]{ TileID.Sand, TileID.Ebonsand, TileID.Crimsand }),
+                new Modifiers.RadialDither(biomeRadius - 5, biomeRadius),
+                new SetModTile(tileSand, true, true)
+            }));
+            WorldUtils.Gen(newOrigin, new Shapes.Circle(biomeRadius), Actions.Chain(new GenAction[] //hardened sand...
+			{
+                new InWorld(),
+                new Modifiers.OnlyTiles(new ushort[]{ TileID.HardenedSand, TileID.CorruptHardenedSand, TileID.CrimsonHardenedSand }),
+                new Modifiers.RadialDither(biomeRadius - 5, biomeRadius),
+                new SetModTile(tileSandHardened, true, true)
+            }));
+            WorldUtils.Gen(newOrigin, new Shapes.Circle(biomeRadius), Actions.Chain(new GenAction[] //...and sandstone.
+			{
+                new InWorld(),
+                new Modifiers.OnlyTiles(new ushort[]{ TileID.Sandstone, TileID.CorruptSandstone, TileID.CrimsonSandstone }),
+                new Modifiers.RadialDither(biomeRadius - 5, biomeRadius),
+                new SetModTile(tileSandstone, true, true)
+            }));
+
+            WorldUtils.Gen(newOrigin, new Shapes.Circle(biomeRadius), Actions.Chain(new GenAction[] //...and sandstone.
+			{
+                new InWorld(),
+                new Modifiers.OnlyTiles(new ushort[]{ TileID.LeafBlock }),
+                new Modifiers.RadialDither(biomeRadius - 5, biomeRadius),
+                new SetModTile(LivingLeaves, true, true)
+            }));
+            WorldUtils.Gen(newOrigin, new Shapes.Circle(biomeRadius), Actions.Chain(new GenAction[] //...and Living Wood.
+			{
+                new InWorld(),
+                new Modifiers.OnlyTiles(new ushort[]{ TileID.LivingMahogany, TileID.LivingWood}),
+                new Modifiers.RadialDither(biomeRadius - 5, biomeRadius),
+                new SetModTile(LivingWood, true, true)
+            }));
+            WorldUtils.Gen(newOrigin, new Shapes.Circle(biomeRadius), Actions.Chain(new GenAction[] //Walls
+			{
+                new InWorld(),
+                new Modifiers.OnlyWalls(new byte[]{ WallID.Stone, WallID.EbonstoneUnsafe, WallID.CrimstoneUnsafe }),
+                new Modifiers.RadialDither(biomeRadius - 5, biomeRadius),
+                new PlaceModWall(StoneWall, true)
+            }));
+            WorldUtils.Gen(newOrigin, new Shapes.Circle(biomeRadius), Actions.Chain(new GenAction[] //Walls
+			{
+                new InWorld(),
+                new Modifiers.OnlyWalls(new byte[]{ WallID.Sandstone, WallID.CorruptSandstone, WallID.CrimsonSandstone }),
+                new Modifiers.RadialDither(biomeRadius - 5, biomeRadius),
+                new PlaceModWall(SandstoneWall, true)
+            }));
+            WorldUtils.Gen(newOrigin, new Shapes.Circle(biomeRadius), Actions.Chain(new GenAction[] //Walls
+			{
+                new InWorld(),
+                new Modifiers.OnlyWalls(new byte[]{ WallID.HardenedSand, WallID.CorruptHardenedSand, WallID.CrimsonHardenedSand }),
+                new Modifiers.RadialDither(biomeRadius - 5, biomeRadius),
+                new PlaceModWall(HardenedSandWall, true)
+            }));
+            WorldUtils.Gen(newOrigin, new Shapes.Circle(biomeRadius), Actions.Chain(new GenAction[] //Walls
+			{
+                new InWorld(),
+                new Modifiers.OnlyWalls(new byte[]{ WallID.HardenedSand, WallID.CorruptHardenedSand, WallID.CrimsonHardenedSand }),
+                new Modifiers.RadialDither(biomeRadius - 5, biomeRadius),
+                new PlaceModWall(HardenedSandWall, true)
+            }));
+            WorldUtils.Gen(newOrigin, new Shapes.Circle(biomeRadius), Actions.Chain(new GenAction[] //Walls
+			{
+                new InWorld(),
+                new Modifiers.OnlyWalls(new byte[]{ WallID.GrassUnsafe, WallID.CorruptGrassUnsafe, WallID.CrimsonGrassUnsafe }),
+                new Modifiers.RadialDither(biomeRadius - 5, biomeRadius),
+                new PlaceModWall(GrassWall, true)
+            }));
+
+            int genX = origin.X - (gen.width / 2);
+            int genY = origin.Y - 80;
+            gen.Generate(genX, genY, true, true);
+
+            //WorldGen.PlaceObject(genX + 65, genY + 4, Terraria.ModLoader.ModContent.TileType<DracoAltarS>());
+            WorldGen.PlaceObject(genX + 24, genY + 307, ModContent.TileType<DragonEgg>());
+            WorldGen.PlaceObject(genX + 33, genY + 313, ModContent.TileType<DragonEgg>());
+            WorldGen.PlaceObject(genX + 46, genY + 314, ModContent.TileType<DragonEgg>());
+            WorldGen.PlaceObject(genX + 57, genY + 316, ModContent.TileType<DragonEgg>());
+            WorldGen.PlaceObject(genX + 67, genY + 316, ModContent.TileType<DragonEgg>());
+            WorldGen.PlaceObject(genX + 78, genY + 317, ModContent.TileType<DragonEgg>());
+            WorldGen.PlaceObject(genX + 87, genY + 315, ModContent.TileType<DragonEgg>());
+            WorldGen.PlaceObject(genX + 96, genY + 312, ModContent.TileType<DragonEgg>());
+            WorldGen.PlaceObject(genX + 103, genY + 307, ModContent.TileType<DragonEgg>());
+            NetMessage.SendObjectPlacment(-1, genX + 24, genY + 307, (ushort)mod.TileType("DragonEgg"), 0, 0, -1, -1);
+            NetMessage.SendObjectPlacment(-1, genX + 33, genY + 313, (ushort)mod.TileType("DragonEgg"), 0, 0, -1, -1);
+            NetMessage.SendObjectPlacment(-1, genX + 46, genY + 314, (ushort)mod.TileType("DragonEgg"), 0, 0, -1, -1);
+            NetMessage.SendObjectPlacment(-1, genX + 57, genY + 316, (ushort)mod.TileType("DragonEgg"), 0, 0, -1, -1);
+            NetMessage.SendObjectPlacment(-1, genX + 67, genY + 316, (ushort)mod.TileType("DragonEgg"), 0, 0, -1, -1);
+            NetMessage.SendObjectPlacment(-1, genX + 78, genY + 317, (ushort)mod.TileType("DragonEgg"), 0, 0, -1, -1);
+            NetMessage.SendObjectPlacment(-1, genX + 87, genY + 315, (ushort)mod.TileType("DragonEgg"), 0, 0, -1, -1);
+            NetMessage.SendObjectPlacment(-1, genX + 96, genY + 312, (ushort)mod.TileType("DragonEgg"), 0, 0, -1, -1);
+            NetMessage.SendObjectPlacment(-1, genX + 103, genY + 307, (ushort)mod.TileType("DragonEgg"), 0, 0, -1, -1);
+
+            for (int num = 0; num < Main.maxTilesX / 390; num++)
+            {
+                int xAxis = origin.X + WorldGen.genRand.Next(0, biomeRadius);
+                int yAxis = origin.Y + WorldGen.genRand.Next(0, biomeRadius);
+                for (int AltarX = xAxis - 45; AltarX < xAxis + 45; AltarX++)
+                {
+                    for (int AltarY = yAxis - 45; AltarY < yAxis + 45; AltarY++)
+                    {
+                        if (Main.rand.Next(15) == 0)
+                        {
+                            WorldGen.PlaceObject(AltarX, AltarY - 1, ModContent.TileType<ChaosAltar2>());
+                        }
+                    }
+                }
+            }
+
+            return true;
+        }
+        public static int GetWorldSize()
+        {
+            if (Main.maxTilesX == 4200) { return 1; }
+            else if (Main.maxTilesX == 6400) { return 2; }
+            else if (Main.maxTilesX == 8400) { return 3; }
+            return 1; //unknown size, assume small
+        }
+    }
+
+    public class InfernoLDelete : MicroBiome
+    {
+        public override bool Place(Point origin, StructureMap structures)
+        {
+            //this handles generating the actual tiles, but you still need to add things like treegen etc. I know next to nothing about treegen so you're on your own there, lol.
+
+            Mod mod = AAMod.instance;
+
+            Dictionary<Color, int> colorToTile = new Dictionary<Color, int>
+            {
+                [new Color(255, 0, 0)] = -2,
+                [new Color(0, 0, 255)] = -2,
+                [new Color(0, 255, 0)] = -2,
+                [new Color(255, 255, 0)] = -2,
+                [new Color(255, 0, 255)] = -2,
+                [new Color(150, 150, 150)] = -2,
+                [Color.Black] = -1
+            };
+
+            TexGen gen = BaseWorldGenTex.GetTexGenerator(mod.GetTexture("Worldgeneration/VolcanoL"), colorToTile);
+            int genX = origin.X - (gen.width / 2);
+            int genY = origin.Y - 80;
+            gen.Generate(genX, genY, true, true);
+
+            return true;
+        }
+    }
+
     public class SurfaceMushroom : MicroBiome
     {
         public override bool Place(Point origin, StructureMap structures)

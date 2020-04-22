@@ -1518,11 +1518,21 @@ namespace AAMod
 
             progress.Message = Language.GetTextValue("Mods.AAMod.Common.AAWorldBuildInferno");
 
+            if (GetWorldSize() != 3)
             {
                 Point origin = new Point((int)infernoPos.X, (int)infernoPos.Y);
                 origin.Y = BaseWorldGen.GetFirstTileFloor(origin.X, origin.Y, true);
                 InfernoBiome biome = new InfernoBiome();
                 InfernoDelete delete = new InfernoDelete();
+                delete.Place(origin, WorldGen.structures);
+                biome.Place(origin, WorldGen.structures);
+            }
+            else
+            {
+                Point origin = new Point((int)infernoPos.X, (int)infernoPos.Y);
+                origin.Y = BaseWorldGen.GetFirstTileFloor(origin.X, origin.Y, true);
+                InfernoLBiome biome = new InfernoLBiome();
+                InfernoLDelete delete = new InfernoLDelete();
                 delete.Place(origin, WorldGen.structures);
                 biome.Place(origin, WorldGen.structures);
             }
