@@ -40,8 +40,8 @@ BuffDescription.ChaosBuff=В основном, ваши магические с�
 BuffName.ChaosClaw=Коготь Раздора
 BuffDescription.ChaosClaw=Призывает Коготь Раздора сражаться за вас
 
-BuffName.ChaosConstruct=Образ хаоса (Либо творение хаоса. Я не знаю просто, что это)
-BuffDescription.ChaosConstruct=Призывает образ хаоса сражаться на вашей стороне
+BuffName.ChaosConstruct=Конструкт Хаоса 
+BuffDescription.ChaosConstruct=Призывает Конструкт Хаоса сражаться на вашей стороне
 
 BuffName.ChaosWrath=Хаотический Гнев
 BuffDescription.ChaosWrath=Боль делает вас сильнее
@@ -70,7 +70,7 @@ BuffDescription.DarkCurse=Вы наносите существенно мень�
 BuffName.DarkLock=Темный Замок
 BuffDescription.DarkLock=Тьма держит вас в одном месте
 
-BuffName.DemonBuff=Лорд Демон
+BuffName.DemonBuff=Лорд-Демон
 BuffDescription.DemonBuff=Вы коммандируете маленьким чертенком, который следует за вами
 
 BuffName.DemonMinion=Демон
@@ -105,8 +105,8 @@ BuffDescription.DragonSoul=Горит гневом дракона
 BuffName.DragonSpirit=Дух Дракона
 BuffDescription.DragonSpirit=Призывает Дух Дракона сражаться за вас
 
-BuffName.DustDevil=Пыльный Дьявол
-BuffDescription.DustDevil=Призывает Пыльного Дьявола сражаться за вас
+BuffName.DustDevil=Пыльный Демон
+BuffDescription.DustDevil=Призывает Пыльного Демона сражаться за вас
 
 BuffName.DynaEnergy1=Дина-Энергия
 
@@ -341,8 +341,8 @@ BuffDescription.YamataGravity='ТЫ ОТ МЕНЯ НЕ СБЕЖИШЬ, ЗАСР�
 BuffName.Yanked=Дернутый
 BuffDescription.Yanked='ТЫ НИКУДА НЕ УЙДЕШЬ, МАЛЕНЬКАЯ НЕЖЕНКА!'
 
-BuffName.ZeroBab=ЗИР0 мини
-BuffDescription.ZeroBab=СИСТЕМЫ ПОИСКА ЖИЗНИ ЗАПУЩЕНЫ
+BuffName.ZeroBab=ЗИР0-мини
+BuffDescription.ZeroBab=СИСТЕМЫ П0ИСКА ЖИЗНИ ЗАПУЩЕНЫ
 
 
 // AAMod.Items.Armor.Assassin
@@ -1178,7 +1178,7 @@ ItemName.InfernoGhoulBanner=Знамя гуля из Инферно
 ===UNKNWN===
 ItemName.KappaBanner= Знамя Каппы
 
-ItemName.LungBanner=Знамя древнего змия
+ItemName.LungBanner=Знамя Древнего Змия
 
 ===UNKNWN===
 ItemName.MadnessBatBanner= Знамя летучей мыши безумия
@@ -1207,22 +1207,22 @@ ItemName.MireSandSharkBanner=Знамя песчаной акулы из Тря�
 ItemName.MiresquitoBanner=Знамя комара
 
 ===UNKNWN===
-ItemName.MossterBanner= Знамя мохтра (Переведи его, как "мохтер")
+ItemName.MossterBanner= Знамя Мохтра 
 
 ===UNKNWN===
-ItemName.MushbugBanner=Знамя грибного жука
+ItemName.MushbugBanner=Знамя Грибного Жука
 
 ===UNKNWN===
-ItemName.MushroomCrabBanner=Знамя грибного краба
+ItemName.MushroomCrabBanner=Знамя Грибного Краба
 
 ===UNKNWN===
-ItemName.MushroomZombieBanner=Знамя грибного зомби
+ItemName.MushroomZombieBanner=Знамя Грибного Зомби
 
 ===UNKNWN===
 ItemName.NewtBanner= Знамя Ньюта
 
 ===UNKNWN===
-ItemName.NightGuardBanner=Знамя ночного стража
+ItemName.NightGuardBanner=Знамя Ночного Стража
 
 ===UNKNWN===
 ItemName.NullBanner= Знамя Нуля
@@ -1264,35 +1264,35 @@ ItemName.SunWatcherBanner=Знамя Солнечного Смотрителя
 ItemName.ShroomJellyBanner=Знамя Грибожельки
 
 ===UNKNWN===
-ItemName.TerraCrawlerBanner=Знамя Терра-Ползуна
+ItemName.TerraCrawlerBanner=Знамя Терра Ползуна
 
 ===UNKNWN===
-ItemName.TerraDeadshotBanner= Знамя Терра-стрелка
+ItemName.TerraDeadshotBanner= Знамя Терра стрелка
 
-ItemName.TerraProbeBanner=Знамя Терра-Дрона
-
-===UNKNWN===
-ItemName.TerraSerpentBanner=Знамя Терра-Змея
+ItemName.TerraProbeBanner=Знамя Терра Дрона
 
 ===UNKNWN===
-ItemName.TerraSphereBanner=Знамя Терра-Сферы
+ItemName.TerraSerpentBanner=Знамя Терра Змея
 
 ===UNKNWN===
-ItemName.TerraSquidBanner=Знамя Терра-Кальмара
+ItemName.TerraSphereBanner=Знамя Терра Сферы
 
 ===UNKNWN===
-ItemName.TerraSquireBanner=Знамя Терра-Щитоносца
+ItemName.TerraSquidBanner=Знамя Терра Кальмара
 
 ===UNKNWN===
-ItemName.TerraWarlockBanner= Знамя Терра-чернокнижника
-
-ItemName.TerraWatcherBanner=Знамя Терра-Смотрителя
+ItemName.TerraSquireBanner=Знамя Терра Щитоносца
 
 ===UNKNWN===
-ItemName.TerraWizardBanner= Знамя Терра-волшебника
+ItemName.TerraWarlockBanner= Знамя Терра Призывателя
+
+ItemName.TerraWatcherBanner=Знамя Терра Смотрителя
 
 ===UNKNWN===
-ItemName.TerraWeaverBanner=Знамя Терра-Ткача
+ItemName.TerraWizardBanner= Знамя Терра Колдуна
+
+===UNKNWN===
+ItemName.TerraWeaverBanner=Знамя Терра Ткача
 
 ===UNKNWN===
 ItemName.TinyToadBanner=Знамя Маленькой Жабы
@@ -1510,7 +1510,7 @@ ItemTooltip.EquinoxBrick=Меняется в зависимости от вре�
 
 ItemName.EventideBrick=Вечерний кирпич
 
-ItemName.IncineriteBrick=Кирпич из инсенерита (Блять научите, как правильно это писать, как у тебя переведено)
+ItemName.IncineriteBrick=Кирпич из Инцинерита
 
 ItemName.SkymarbleBrick=Кирпич из небесного мрамора
 
@@ -2471,7 +2471,7 @@ ItemName.Hydraslayer=Аменомураку
 ItemTooltip.Hydraslayer=Используется для уничтожения многоголовых чудовищ бездны\nНакладывает Лунный Распад
 
 ItemName.HydraStabber=Шив Бездны
-ItemTooltip.HydraStabber=Extremely fast and dangerous\nIInflicts Moonraze
+ItemTooltip.HydraStabber=Чрезвычайно опасный и быстрый\nНакладывает Лунный распад
 
 ItemName.MidnightWrath=Полуночный Гнев
 ItemTooltip.MidnightWrath=Не тратится
@@ -2568,7 +2568,7 @@ ItemName.ZeroTrophy=Тр0фей Зир0
 ItemName.ChaosRune=Хаос Руна
 ItemTooltip.ChaosRune=Проклятая дощечка, разрывающаяся хаотической энергией\nПризывает истинную форму Шен Дорагона\nНе тратится
 
-ItemName.ChaosSigil=Сигила Хаоса
+ItemName.ChaosSigil=Печать Хаоса
 ItemTooltip.ChaosSigil=Проклятая дощечка, полная нестабильной магии\nПризывает Императора Хаоса\nНе тратится
 
 ItemName.ConfusingMushroom=Странно выглядящий гриб
@@ -2589,7 +2589,7 @@ ItemTooltip.DjinnLamp=Призывает Пустынного Джинна
 ItemName.DraconianRune=Руна Драконического Солнца
 ItemTooltip.DraconianRune=Закалдованная дощечка, разрывающаяся огненной хаотической энергией\nПризывает Они Акуму\nМожно использовать только днем в Инферно\nНе тратится
 
-ItemName.DraconianSigil=Сигила Драконического Солнца
+ItemName.DraconianSigil=Печать Драконического Солнца
 ItemTooltip.DraconianSigil=Богато украшенная дощечка, которая, по слухам, содержит лучезарную силу тысячи солнц\nПризывает Акуму\nМожно использовать только днем в Инферно\nНе тратится
 
 ItemName.DragonBell=Древний Колокол
@@ -2598,7 +2598,7 @@ ItemTooltip.DragonBell=Богато украшенный колокол\nПри�
 ItemName.DreadRune=Руна Ужасающей Луны
 ItemTooltip.DreadRune=Закалдованная дощечка, испускающая темную хаотическую энергию\nПризывает Ямата Но Орочи\nМожно использовать только ночью в Трясине\nNon-Consumable
 
-ItemName.DreadSigil=Сигила Ужасающей Луны
+ItemName.DreadSigil=Печать Ужасающей Луны
 ItemTooltip.DreadSigil=Рваная старая дощечка, которая, по слухам, содержит темную магию новой Луны\nПризывает Ямату\nМожно использовать только ночью в Трясине\nNon-Consumable
 
 ItemName.EquinoxWorm=Червь Равноденствия
@@ -3066,8 +3066,8 @@ ItemTooltip.DragonStaff=Стреляет чешуйками Дракона
 ItemName.ElectricitySpell=Осколок электричества
 ItemTooltip.ElectricitySpell=Равномерно стреляет искрами
 
-ItemName.Fireblast=Fireblast
-ItemTooltip.Fireblast=Shoots an explosive bolt of dragonflame
+ItemName.Fireblast=Огневыстрел
+ItemTooltip.Fireblast=Выстреливает взрывным снарядом драконьего дыхания
 
 ItemName.Fireblast=Огневыстрел
 ItemTooltip.Fireblast=Выстреливает взрывным снарядом драконьего дыхания
@@ -3272,7 +3272,7 @@ ItemTooltip.Stardust=Осколок райского космоса
 
 ItemName.SwampKoi=Болотная Кой
 
-ItemName.TerraShard=Терра-осколок
+ItemName.TerraShard=Терра Осколок
 
 ItemName.TerrorSoul=Душа Террора
 
@@ -3410,7 +3410,7 @@ ItemTooltip.DragonFang=Нажмите правую кнопку мыши, что
 
 ItemName.DragonGlove=Перчатка Дракона
 
-ItemName.Dragonkite=?
+ItemName.Dragonkite=Полет Дракона
 
 ItemName.DuskBringer=Разносчик Сумрака
 
@@ -3426,7 +3426,7 @@ ItemName.FlamingFury=Огненная Ярость
 ItemTooltip.FlamingFury=Скована воспламеняющим гневом древних драконов
 
 ItemName.FleshrendClaymore=Плотный Клеймор
-ItemTooltip.FleshrendClaymore=Запятнан кровью павших враговStained with the blood of your fallen foes.
+ItemTooltip.FleshrendClaymore=Запятнан кровью павших врагов
 
 ItemName.GlacierBreaker=Разрушитель Ледника
 ItemTooltip.GlacierBreaker=Пока цепь летит, падают сосульки
@@ -3511,9 +3511,9 @@ ItemTooltip.StarWrathEX=Вызывает с небес падающие звез
 ItemName.SunLance=Солнечная Алебарда
 
 ItemName.TerraBladeEX=Истинный Клинок земли
-ItemTooltip.TerraBladeEX=Стреляет самонаводящимися снарядами, накладывающими Терра-Пламя\nТерра-меч EX
+ItemTooltip.TerraBladeEX=Стреляет самонаводящимися снарядами, накладывающими Терра-Пламя\nКлинок земли EX
 
-ItemName.TerraShortsword=Терра-Палаш
+ItemName.TerraShortsword=Терра Палаш
 
 ===UNKNWN===
 ItemName.Tizona=Тизона
@@ -3552,7 +3552,7 @@ ItemTooltip.Yogan=Поджигает врагов
 
 ItemName.AnubisBook=Жизнь и Эпические Приключения
 Чудо-пса Анубиса!
-ItemTooltip.AnubisBook=Очень... интересный взгляд на жизнь и несчастные случаи\nАнубиса, Летописца Легенд. Может быть, если вы дадите это ему,\nон даст что-нибудь взамен.
+ItemTooltip.AnubisBook=Очень... интересный взгляд на жизнь и несчастные случаи\nАнубиса, Летописца легенд. Может быть, если вы дадите это ему,\nон даст что-нибудь взамен.
 
 ItemName.Fishmother=Рыба-мать
 
@@ -3577,7 +3577,7 @@ ItemName.Green=Зеленый Алхимический Гриб
 ItemTooltip.Green=Пахнет странно
 
 ItemName.MadnessShroom=Гриб Безумия
-ItemTooltip.MadnessShroom=Чрезвычайно редкий гриб\nМожет Грибочеловек знает, что делать с этим?
+ItemTooltip.MadnessShroom=Чрезвычайно редкий гриб\nМожет Человек-Гриб знает, что делать с этим?
 
 ItemName.Orange=Оранжевый Алхимический Гриб
 ItemTooltip.Orange=Пахнет странно
@@ -3737,7 +3737,7 @@ ItemName.RadiumArrow=Радиевая Стрела
 ItemName.ReaperArrow=Стрела Жнеца
 ItemTooltip.ReaperArrow=Проходит сквозь стены
 
-ItemName.TerraArrow=Терра-Стрела
+ItemName.TerraArrow=Терра Стрела
 ItemTooltip.TerraArrow=Наводится на врагов\nНе тратится
 
 
@@ -3845,11 +3845,6 @@ ItemName.MidasGun=Бластер
 ItemTooltip.MidasGun=Выстрели, чтобы выбить больше денег.
 
 ===UNKNWN===
-ItemName.Mossket=
-
-ItemName.Mushbow=Mushroom Bow
-
-===UNKNWN===
 ItemName.Mossket=Мохшкет
 
 ItemName.Mushbow=Грибной Лук
@@ -3880,7 +3875,7 @@ ItemName.SingularityCannon=Пушка Сингулярности
 ItemName.Skystrike=Скайстрайк
 ItemTooltip.Skystrike=Стреляет с неба Стрелами Воздушного Проклятья\nПервые стрелы игнорируют блоки\nВоздушное Проклятье EX
 
-ItemName.TerraBallista=Терра-Баллиста
+ItemName.TerraBallista=Терра Баллиста
 ItemTooltip.TerraBallista=Заменяет стрелы Терра-Стрелами
 
 ItemName.TheSquirter=Плевала
@@ -4129,59 +4124,59 @@ ItemName.TrueScalpel=Истинный Скальпель
 // AAMod.Items.Usable
 
 
-ItemName.BlackSolution=Black Solution
-ItemTooltip.BlackSolution=Used by the Clentaminator\nSpreads the Void
+ItemName.BlackSolution=Черный раствор
+ItemTooltip.BlackSolution=Используется с очистителем\nРаспространяет Пустоту
 
-ItemName.BrownSolution=Brown Solution
-ItemTooltip.BrownSolution=Used by the Clentaminator\nSpreads the Red Mushroom biome
+ItemName.BrownSolution=Коричневый раствор
+ItemTooltip.BrownSolution=Используется с очистителем\nРаспространяет Красный Грибной биом
 
-ItemName.CodeMagnet=Binary Code Magnet
-ItemTooltip.CodeMagnet=Pulls items to you by moving its code closer to you\nRight click the item to turn it off
+ItemName.CodeMagnet=Магнит Бинарного Кода
+ItemTooltip.CodeMagnet=Притягивает код предметов к вам\nНажмите на правую кнопку мыши, что бы выключить магнит
 
-ItemName.CodeMagnetOff=Binary Code Magnet
-ItemTooltip.CodeMagnetOff=Pulls items to you by moving its code closer to you\nRight click the item to turn it on
+ItemName.CodeMagnetOff=Магнит Бинарного Кода
+ItemTooltip.CodeMagnetOff=Притягивает код предметов к вам\nНажмите на правую кнопку мыши, что бы включить магнит
 
-ItemName.DeepGreenSolution=Deep Green Solution
-ItemTooltip.DeepGreenSolution=Used by the Clentaminator\nConverts the jungle into forest
+ItemName.DeepGreenSolution=Темно-зеленый раствор
+ItemTooltip.DeepGreenSolution=Используется с очистителем\nПревращает Джунгли в Лес
 
-ItemName.DoomSeeds=Doom Seeds
-ItemTooltip.DoomSeeds=Plants Doomgrass
+ItemName.DoomSeeds=Семена рока
+ItemTooltip.DoomSeeds=Садят траву пустоты
 
-ItemName.DoomstopperKey=Doomstopper Chip
-ItemTooltip.DoomstopperKey='Unlocks Doomsday Chests'
+ItemName.DoomstopperKey=Чип остановки рока
+ItemTooltip.DoomstopperKey='Открывает сундуки Судного дня'
 
-ItemName.FungicideSolution=Swarm Solution
-ItemTooltip.FungicideSolution=Used by the Clentaminator\nCleanses the mushroom biomes
+ItemName.FungicideSolution=Раствор роя
+ItemTooltip.FungicideSolution=Используется с очистителем\nОчищает грибные биомы
 
-ItemName.GreedKey=Gilded Key
-ItemTooltip.GreedKey=This probably unlocks...something?
+ItemName.GreedKey=Позолоченный ключ
+ItemTooltip.GreedKey=Он открывает...что-то?
 
-ItemName.IndigoSolution=Indigo Solution
-ItemTooltip.IndigoSolution=Used by the Clentaminator\nSpreads the Mire
+ItemName.IndigoSolution=Раствор индиго
+ItemTooltip.IndigoSolution=Используется с очистителем\nРаспространяет Трясину
 
-ItemName.InfernoKey=Inferno Key
-ItemTooltip.InfernoKey='Unlocks the power of the blazing sun'
+ItemName.InfernoKey=Ключ Инферно
+ItemTooltip.InfernoKey='Открывает силу опаляющего солнца'
 
-ItemName.InfernoSeeds=Scorched Seeds
-ItemTooltip.InfernoSeeds=Plants Inferno grass
+ItemName.InfernoSeeds=Опаленные семена
+ItemTooltip.InfernoSeeds=Садят траву Инферно
 
-ItemName.KeyOfSmite=Key of Smite
-ItemTooltip.KeyOfSmite='Charged with flaming energy'
+ItemName.KeyOfSmite=Ключ Разрушения
+ItemTooltip.KeyOfSmite='Заряжен огненной энергией'
 
-ItemName.KeyOfSpite=Key of Spite
-ItemTooltip.KeyOfSpite='Charged with abyssal energy'
+ItemName.KeyOfSpite=Ключ Злости
+ItemTooltip.KeyOfSpite='Заряжен энергией бездны'
 
-ItemName.LimeSolution=Lime Solution
-ItemTooltip.LimeSolution=Used by the Clentaminator\nConverts the forest into the jungle
+ItemName.LimeSolution=Лаймовый раствор
+ItemTooltip.LimeSolution=Используется с очистителем\nПревращает Лес в Джунгли
 
-ItemName.MireKey=Mire Key
-ItemTooltip.MireKey='Unlocks the power of the wrathful abyss'
+ItemName.MireKey=Ключ Трясины
+ItemTooltip.MireKey='Открывает силу разгневанной бездны'
 
-ItemName.MireSeeds=Dank Seeds
-ItemTooltip.MireSeeds=Plants Mire grass
+ItemName.MireSeeds=Мокрые семена
+ItemTooltip.MireSeeds=Садят траву Трясины
 
-ItemName.Mooncaller=Mooncaller
-ItemTooltip.Mooncaller=Brings forth the shimmering moon.\nNon-Consumable
+ItemName.Mooncaller=Взывающий к Луне
+ItemTooltip.Mooncaller=Вызывает мерцающую Луну.\nНе тратится
 
 ===UNKNWN===
 ItemName.Moonpowder=Лунный Порошок
@@ -4197,13 +4192,13 @@ ItemName.OrderSolution=Раствор Порядка
 ItemTooltip.OrderSolution=Используется Очистителем\nОчищает Хаос
 
 ItemName.RiftMirror=Зеркало Разлома
-ItemTooltip.RiftMirror=Нажатие на горячую клавишу разлома (rift) возвращает вас домой\nНажатие на горячую клавишу возвращения разлома (rift return) возвращает вас на прошлую точку телепорта
+ItemTooltip.RiftMirror=Нажатие на горячую клавишу разлома возвращает вас домой\nНажатие на горячую клавишу возвращения разлома возвращает вас на прошлую точку телепорта
 
 ItemName.SporeSac=Споровый Мешок
 ItemTooltip.SporeSac=Распространяет поверхностный грибной биом
 
 ItemName.Suncaller=Взывающий к Солнцу
-ItemTooltip.Suncaller=Вызывает утреннее солнце.\nНе тратится
+ItemTooltip.Suncaller=Вызывает утреннее Солнце.\nНе тратится
 
 ===UNKNWN===
 ItemName.Sunpowder=Солнечный Порошок
@@ -4353,7 +4348,7 @@ ItemTooltip.CCRobe=Роба фанатика Яматы\n''Спасибо за �
 
 
 ItemName.InvokerBag=Будка Цербера
-ItemTooltip.InvokerBag=<right>, что бы открыть\n'Предметы первой необходимости для подражания Призывателя Песиков!'
+ItemTooltip.InvokerBag=<right>, что бы открыть\n'Предметы первой необходимости для подражания Призывателю Песиков!'
 
 ItemName.InvokerHood=Капюшон Призывателя
 ItemTooltip.InvokerHood=Заколдованный капюшон Алейстера 'Мега Теориона'\n'Великолепен для подражания разработчикам Ancients Awakened!'
@@ -4614,16 +4609,16 @@ ItemName.ZeroMask=Маска Зир0
 
 
 ItemName.Mask=Маска
-ItemTooltip.Mask='Великолепна для подражания контрибьюторов Ancients Awakened!'
+ItemTooltip.Mask='Великолепна для подражания контрибьюторам Ancients Awakened!'
 
 ItemName.MaskBag=Мешок с масками
 ItemTooltip.MaskBag=<right>, что бы открыть\n'Предметы первой необходимости для подражания Лорду Масок!'
 
 ItemName.MaskBoots=Штаны Лорда масок
-ItemTooltip.MaskBoots='Great for impersonating Ancients Awakened Contributors!'
+ItemTooltip.MaskBoots='Великолепны для подражания контрибьюторам Ancients Awakened!'
 
 ItemName.MaskPlate=Нагрудник Лорда Масок
-ItemTooltip.MaskPlate='Great for impersonating Ancients Awakened Contributors!'
+ItemTooltip.MaskPlate='Великолепен для подражания контрибьюторам Ancients Awakened!'
 
 // AAMod.Items.Vanity.Mikpin
 
@@ -4677,13 +4672,13 @@ ItemName.ShoxBag=Заряженный мешок Шока
 ItemTooltip.ShoxBag=<right>, что бы открыть\n'Предметы первой необходимости для подражания Лорду Шока!'
 
 ItemName.ShoxPants=Ботинки Лорда Шока
-ItemTooltip.ShoxPants='Великолепны для подражания контрибьюторов Ancients Awakened!'
+ItemTooltip.ShoxPants='Великолепны для подражания контрибьюторам Ancients Awakened!'
 
 ItemName.ShoxPlate=Пластина Лорда Шока
-ItemTooltip.ShoxPlate='Великолепны для подражания контрибьюторов Ancients Awakened!'
+ItemTooltip.ShoxPlate='Великолепна для подражания контрибьюторам Ancients Awakened!'
 
 ItemName.ShoxVisor=Визор Лорда Шока
-ItemTooltip.ShoxVisor='Великолепны для подражания контрибьюторов Ancients Awakened!'
+ItemTooltip.ShoxVisor='Великолепны для подражания контрибьюторам Ancients Awakened!'
 
 // AAMod.Items.Vanity.Ohno
 
@@ -4741,13 +4736,13 @@ ItemName.VoidBag=Врата Пустоты
 ItemTooltip.VoidBag=<right>, что бы открыть\n'Предметы первой необходимости для подражания Темному Смотрителю!'
 
 ItemName.VoidEyeBoots=Штаны Глаза Пустоты
-ItemTooltip.VoidEyeBoots='Великолепны для подражания контрибьюторов Ancients Awakened!'
+ItemTooltip.VoidEyeBoots='Великолепны для подражания контрибьюторам Ancients Awakened!'
 
 ItemName.VoidEyeHelm=Маска Глаза Пустоты 
-ItemTooltip.VoidEyeHelm='Великолепна для подражания контрибьюторов Ancients Awakened!'
+ItemTooltip.VoidEyeHelm='Великолепна для подражания контрибьюторам Ancients Awakened!'
 
 ItemName.VoidEyePlate=Нагрудник Глаза Пустоты 
-ItemTooltip.VoidEyePlate='Великолепен для подражания контрибьюторов Ancients Awakened!'
+ItemTooltip.VoidEyePlate='Великолепен для подражания контрибьюторам Ancients Awakened!'
 
 
 // AAMod.Items.Walls
@@ -4812,7 +4807,7 @@ NPCName.AsheDragonTail=Пепельный Дракон
 NPCName.AsheOrbiter=Огненный Вихрь
 
 ===UNKNWN===
-NPCName.AsheRune=
+NPCName.AsheRune=Руна Аши
 
 NPCName.AsheSpawn=Аши Акума
 
@@ -5256,7 +5251,7 @@ NPCName.YamataHead=Ямата
 NPCName.YamataHeadF1=Ямата
 
 ===UNKNWN===
-NPCName.YamataHeadF2=
+NPCName.YamataHeadF2=Ямата
 
 NPCName.YamataTransition=Дух Гнева
 
