@@ -2593,7 +2593,7 @@ Fishy";
                         case "FatPixie":
                         return "EEEE";
                         case "HarukaShadow":
-                        return "pathetic.";
+                        return "Жалко.";
 
                         case "AHDeath1":
                         return "РРРРРРРГХ! НЕТ, ТОЛЬКО НЕ СНОВА!!!";
